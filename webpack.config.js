@@ -1,4 +1,10 @@
 module.exports = {
+    devServer: {
+        overlay: {
+            warnings: false,
+            errors: false
+        }
+    },
     lintOnSave: false, //禁用eslint
     publicPath: 'http://rap2api.taobao.org/app/mock/7058',
     productionSourceMap: false,

@@ -3,6 +3,14 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import axios from 'axios';
+axios.post("",{
+  pageNum:1,
+    pageSize:6
+}).then((res)=>{
+  console.log(res)
+})
+
 Vue.config.productionTip = false;
 
 new Vue({
