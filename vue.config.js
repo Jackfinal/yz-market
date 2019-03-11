@@ -6,7 +6,7 @@ module.exports = {
         delete config.entry.app
     },
     lintOnSave: false, //禁用eslint
-    publicPath: 'http://rap2api.taobao.org/app/mock/7058',
+    publicPath: './',
     productionSourceMap: false,
     pages,
 
