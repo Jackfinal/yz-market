@@ -14,7 +14,10 @@
 
 <script>
     import  '../../../modules/css/goods_custom.css'
-    import * as API from '../api/swiperAPI'
+    import * as API from '../../../modules/js/api/config.js'
+    import { InfiniteScroll } from 'mint-ui';
+    Vue.use(InfiniteScroll);
+
     export default {
         name: "swiper",
         data(){
@@ -23,8 +26,8 @@
             }
         },
         mounted(){
-            API.get().then((res)=>{
-                res.map(item=>{})
+            API.GET('/index/banner').then((res)=>{
+                console.log('banner',res)
             })
         }
     }

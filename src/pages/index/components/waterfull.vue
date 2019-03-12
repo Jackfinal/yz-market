@@ -20,8 +20,6 @@
 </template>
 
 <script>
-    import { InfiniteScroll } from 'minu-ui';
-    Vue.use(InfiniteScroll);
     export default {
         name: "waterfull",
         components:{

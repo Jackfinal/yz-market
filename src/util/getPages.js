@@ -18,6 +18,7 @@ module.exports.pages = function (){
             // 提取出来的通用 chunk 和 vendor chunk。
             chunks: ['chunk-vendors', 'chunk-common', fileName]
         }
+        console.log(pages)
     })
     return pages
 };
