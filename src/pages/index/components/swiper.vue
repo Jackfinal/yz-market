@@ -13,8 +13,20 @@
 </template>
 
 <script>
+    import  '../../../modules/css/goods_custom.css'
+    import * as API from '../api/swiperAPI'
     export default {
-        name: "swiper"
+        name: "swiper",
+        data(){
+            return {
+
+            }
+        },
+        mounted(){
+            API.get().then((res)=>{
+                res.map(item=>{})
+            })
+        }
     }
 </script>
 

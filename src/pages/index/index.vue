@@ -3,9 +3,9 @@
         <div id="nav">
             <div class="container with-bottom-nav" style="min-height: 667px;">
                 <div class="content">
-                    <!--轮播-->
+                    <!--轮播图-->
                     <Swiper/>
-                    <!--推荐-->
+                    <!--推荐列表-->
                     <Recommended/>
                     <!--瀑布流-->
                     <Waterfull/>

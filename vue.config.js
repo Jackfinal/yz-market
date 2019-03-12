@@ -9,5 +9,4 @@ module.exports = {
     publicPath: './',
     productionSourceMap: false,
     pages,
-
 }

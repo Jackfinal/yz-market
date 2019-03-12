@@ -7,6 +7,6 @@ import * as API from '../../../modules/js/api/config.js'
 export default {
     //新增
     get: params => {
-        return API.POST(`/sys`, params)
+        return API.GET(`/index/banner`, params)
     },
 }
