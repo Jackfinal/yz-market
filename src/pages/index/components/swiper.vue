@@ -15,8 +15,6 @@
 <script>
     import  '../../../modules/css/goods_custom.css'
     import * as API from '../../../modules/js/api/config.js'
-    import { InfiniteScroll } from 'mint-ui';
-    Vue.use(InfiniteScroll);
 
     export default {
         name: "swiper",

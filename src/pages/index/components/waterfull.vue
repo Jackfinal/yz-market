@@ -22,9 +22,6 @@
 <script>
     export default {
         name: "waterfull",
-        components:{
-            InfiniteScroll
-        },
         data(){
             return {
                 loading: false,

@@ -9,7 +9,6 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
-<<<<<<< HEAD
     },
     {
       path: "/about",
@@ -19,8 +18,6 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/!* webpackChunkName: "about" *!/ "../../views/About.vue")
-=======
->>>>>>> 489ec3105051ebc286fccae729cdc9dd459bc5ad
     }*/
   ]
 });

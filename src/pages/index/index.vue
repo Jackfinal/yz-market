@@ -27,7 +27,10 @@
         name: 'app',
         components: {
             Swiper,Recommended,Waterfull,BottomNav
-        }
+        },
+        data() {
+            return {};
+        },
     }
 </script>
 <style lang="scss">
