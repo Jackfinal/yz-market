@@ -16,7 +16,7 @@
                 </div>
             </div>
             <!--底部导航-->
-            <BottomNav/>
+            <Foot/>
         </div>
     </div>
 </template>
@@ -24,11 +24,11 @@
   import Swiper from './components/swiper'
   import Recommended from './components/recommended'
   import Waterfull from './components/waterfull'
-  import BottomNav from './components/bottomNav'
+  import Foot from '../../components/footer'
     export default {
         name: 'app',
         components: {
-            Swiper,Recommended,Waterfull,BottomNav
+            Swiper,Recommended,Waterfull,Foot
         },
         data() {
             return {};
@@ -42,15 +42,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
