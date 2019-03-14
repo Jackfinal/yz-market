@@ -1,36 +1,57 @@
 <template>
-    <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swp-page">
-                    <a class="js-no-follow" href="https://h5.koudaitong.com/v2/index/rukou">
-                        <img class="goods-main-photo fadeIn" src="https://img.yzcdn.cn/upload_files/2016/07/29/Fl3T06Mu7TpIhR4L1s2tzm8cZrgt.jpg">
-                    </a>
-                </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swp-page" v-for="list in bannerLists">
+                <a class="js-no-follow" :href="list.clickUrl">
+                    <img class="goods-main-photo fadeIn" :src="list.img">
+                </a>
             </div>
         </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
     </div>
 </template>
 
 <script>
-    import  '../../../modules/css/goods_custom.css'
+    import '../../../modules/css/goods_custom.css'
     import * as API from '../../../modules/js/api/config.js'
+    import Swiper from 'swiper'
+    import 'swiper/dist/css/swiper.min.css';
 
     export default {
         name: "swiper",
-        data(){
+        data() {
             return {
-
+                bannerLists: null,
             }
         },
-        mounted(){
-            API.GET('/index/banner').then((res)=>{
-                console.log('banner',res)
+        methods:{
+          getBanner(){
+              API.GET('/index/banner').then((res) => {
+                  this.bannerLists = res.lists
+              })
+          }
+        },
+        created(){
+            this.getBanner()
+        },
+        mounted() {
+            new Swiper('.swiper-container', {
+                autoplay: true,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination'
+                },
             })
         }
     }
 </script>
 
 <style scoped>
-
+    .swiper-slide img{
+        height:100%;
+        width:100%;
+    }
 </style>

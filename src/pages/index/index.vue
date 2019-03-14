@@ -4,7 +4,9 @@
             <div class="container with-bottom-nav" style="min-height: 667px;">
                 <div class="content">
                     <!--轮播图-->
-                    <Swiper/>
+                    <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
+                        <Swiper/>
+                    </div>
                     <!--推荐列表-->
                     <Recommended/>
                     <!--瀑布流-->
