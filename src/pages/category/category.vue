@@ -4,8 +4,8 @@
       <SearchBar/>
       <div class="search-content" style="display: none;"></div>
       <div class="content" style="height: 617px;">
-        <LeftNav/>
-        <CategoryContent/>
+        <LeftNav @getSubList="setSubList" @getTopList="setTopList"/>
+        <CategoryContent @getSubList="setSubList"/>
       </div>
       <Foot/>
     </div>
@@ -16,11 +16,37 @@
     import SearchBar from './components/searchBar'
     import LeftNav from './components/leftNav'
     import CategoryContent from './components/categoryContent'
+    import * as API from '../../modules/js/api/config.js'
+    import mixin from '../../modules/js/mixin.js'
 
   export default{
         components:{
             Foot,SearchBar,LeftNav,CategoryContent
-        }
+        },
+      methods:{
+            setSubList(index,id){
+                console.log(index,id)
+                this.$store.commit('SET_TOPINDEX',index)
+                if(index === 0) {
+                    this.setRank()
+                }else {
+                    API.GET(`/category/subList?id=${id}`).then(res => {
+                        this.$store.commit('SET_SUBDATA',res.data)
+                    })
+                }
+            },
+          setTopList() {
+              API.GET('/category/topList').then(res => {
+                  this.$store.commit('SET_TOPLIST',res.lists)
+              }).catch(res => {})
+          },
+          setRank() {
+              API.GET('/category/rank').then(res => {
+                  this.$store.commit('SET_RANK',res.data)
+              })
+          },
+      },
+      mixins: [mixin]
   }
 </script>
 <style lang="scss">

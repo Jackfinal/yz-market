@@ -768,13 +768,14 @@ html {
 }
 
 .class-category {
-  margin-left: 96px;
+  margin-left: 46px;
   padding-top: 11px;
   box-sizing: border-box
 }
 
 .inner-content {
-  width: 100%
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .inner-content,
@@ -815,7 +816,8 @@ only screen and (min-device-pixel-ratio:1.5) {
 }
 
 .main-content {
-  height: 100%
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .main-content .category-title {

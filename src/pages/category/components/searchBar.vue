@@ -32,5 +32,7 @@
 </script>
 
 <style scoped>
-
+    .custom-search{
+        position: fixed;
+    }
 </style>

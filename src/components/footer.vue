@@ -10,6 +10,7 @@
 </template>
 
 <script>
+    import '../modules/css/search.css'
     export default {
         name: "foot"
     }
