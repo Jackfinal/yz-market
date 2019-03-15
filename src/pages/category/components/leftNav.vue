@@ -21,13 +21,7 @@
             topLists(){ return this.$store.state.topLists },
             topIndex(){ return this.$store.state.topIndex },
         },
-        created(){
-            this.getTopList()
-        },
         methods:{
-            getTopList() {
-                this.$emit('getTopList')
-            },
             getSubList(index,id) {
                 this.$emit('getSubList',index,id)
             },

@@ -93,7 +93,6 @@
     export default {
         name: "content",
         created() {
-            this.getSubList(0)
         },
         computed:{
             rankData(){ return this.$store.state.rankData },
@@ -101,9 +100,6 @@
             subData(){ return this.$store.state.subData },
         },
         methods: {
-            getSubList(index,id) {
-                this.$emit('getSubList',index,id)
-            },
             toSearch(list){
                     location.href = `search.html?keyword=${list.name}&id=${list.id}`
             }

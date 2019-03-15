@@ -4,8 +4,8 @@
       <SearchBar/>
       <div class="search-content" style="display: none;"></div>
       <div class="content" style="height: 617px;">
-        <LeftNav @getSubList="setSubList" @getTopList="setTopList"/>
-        <CategoryContent @getSubList="setSubList"/>
+        <LeftNav @getSubList="setSubList"/>
+        <CategoryContent/>
       </div>
       <Foot/>
     </div>
@@ -23,6 +23,10 @@
         components:{
             Foot,SearchBar,LeftNav,CategoryContent
         },
+      created(){
+          this.setSubList(0)
+          this.setTopList()
+      },
       methods:{
             setSubList(index,id){
                 console.log(index,id)
