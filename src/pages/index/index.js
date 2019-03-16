@@ -4,10 +4,10 @@ import router from "./router";
 import store from "./store";
 import '../../modules/css/common.css';
 import './index.css';
-import 'mint-ui/lib/style.css'
-import Mint from 'mint-ui';
-Vue.use(Mint);
+import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 
+Vue.use(mandMobile)
 
 Vue.config.productionTip = false;
 

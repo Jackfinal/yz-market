@@ -1,6 +1,6 @@
 <template>
-    <div class="hot-goods js-waterfull-wrap" data-src="">
-        <ul class="js-list js-lazy" v-infinite-scroll="getLists" :infinite-scroll-disabled="loading" :infinite-scroll-distance="10" data-src="">
+    <div class="hot-goods js-waterfull-wrap">
+        <md-scroll-view ref="scrollView" :scrolling-x="false" @endReached="getLists" class="js-list js-lazy">
             <li v-for="list in lists" :key="list.id">
                 <div class="goods-item">
                     <a href="https://h5.youzan.com/v2/showcase/goods?alias=2fwig6rnqfq6m&amp;source=yzapp&amp;f_platform=yzapp">
@@ -14,8 +14,8 @@
                     </a>
                 </div>
             </li>
-        </ul>
-        <div class="loading-more" v-show="loading"><span></span></div>
+            <md-scroll-view-more slot="more" :is-finished="allLoaded"></md-scroll-view-more>
+        </md-scroll-view>
     </div>
 </template>
 
@@ -28,7 +28,6 @@
             return {
                 pageNum: 1,
                 pageSize: 6,
-                loading: false,
                 lists: [],
                 allLoaded: false,
             }
@@ -38,20 +37,20 @@
             getLists(){
                 // 判断加载完毕,返回
                 if(this.allLoaded) return
-                this.loading = true
                 API.GET(`/index/hotLists?pageNum=${this.pageNum}&pageSize=${this.pageSize}`).then(res => {
                     let curLists = res.lists
                     if(curLists.length < this.pageSize){
                         this.allLoaded = true
+                        console.log('加载完成')
                     }
                     if(this.lists){
                         this.lists = this.lists.concat(curLists)
                     }else{
                         this.lists = curLists
                     }
+                    this.$refs.scrollView.finishLoadMore()
                 })
                 this.pageNum += 1
-                this.loading = false
             }
         },
         created(){
@@ -60,37 +59,4 @@
     }
 </script>
 
-<style scoped>
-    .list-finished,
-    .loading-more {
-        width: 100%;
-        padding: 20px 10px;
-        vertical-align: middle;
-        text-align: center;
-        color: #999;
-        font-size: 12px;
-        line-height: 20px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box
-    }
-
-    .list-finished span,
-    .loading-more span {
-        display: inline-block;
-        margin-top: 10px;
-        width: 16px;
-        height: 16px;
-        background: url("/v2/image/loader.gif") no-repeat center center;
-        background-size: 16px 16px
-    }
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min--moz-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5) {
-        .list-finished span,
-        .loading-more span {
-            background-image: url("/v2/image/loader@2x.gif")
-        }
-    }
-</style>
+<style></style>

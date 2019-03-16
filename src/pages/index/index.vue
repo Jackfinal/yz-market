@@ -4,12 +4,19 @@
             <div class="container with-bottom-nav" style="min-height: 667px;">
                 <div class="content">
                     <!--轮播图-->
-                    <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
-                        <Swiper/>
-                    </div>
-                    <!--推荐列表-->
+                    <Swiper/>
+                    <!--优店推荐-->
                     <Recommended/>
-                    <!--瀑布流-->
+                    <!--瀑布流_最热商品推荐-->
+                    <div class="section-content daily">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="line-block line-block-gray">
+                        <div class="lineblock-title">
+                            <span class="lineblock-font">最热商品推荐</span>
+                        </div>
+                    </div>
                     <Waterfull/>
                     <!--指南-->
                     <div class="js-show-find category-guid" style="display: none;"></div>

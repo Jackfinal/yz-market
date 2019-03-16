@@ -1,24 +1,18 @@
 <template>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide swp-page" v-for="list in bannerLists">
+    <div>
+        <md-swiper ref="swiper" :is-prevent="false" :useNative-driver="false">
+            <md-swiper-item class="swiper-slide swp-page" v-for="list in bannerLists">
                 <a class="js-no-follow" :href="list.clickUrl">
                     <img class="goods-main-photo fadeIn" :src="list.img">
                 </a>
-            </div>
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-        <!-- 如果需要滚动条 -->
-        <div class="swiper-scrollbar"></div>
+            </md-swiper-item>
+        </md-swiper>
     </div>
 </template>
 
 <script>
     import '../../../modules/css/goods_custom.css'
     import * as API from '../../../modules/js/api/config.js'
-    import Swiper from 'swiper'
-    import 'swiper/dist/css/swiper.min.css';
 
     export default {
         name: "swiper",
@@ -38,20 +32,16 @@
             this.getBanner()
         },
         mounted() {
-            new Swiper('.swiper-container', {
-                autoplay: true,
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination'
-                },
-            })
         }
     }
 </script>
 
 <style scoped>
-    .swiper-slide img{
-        height:100%;
-        width:100%;
+    .custom-image-swiper .swiper-slide a img{
+        max-width: 100vh !important;
+        height: auto;
+    }
+    .custom-image-swiper .swp-page img{
+        width:auto;
     }
 </style>

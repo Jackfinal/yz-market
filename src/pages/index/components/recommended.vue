@@ -1,6 +1,5 @@
 <template>
     <div>
-        <a href="https://maijia.youzan.com/mars/notice/detail?id=" class="notice"></a>
         <div class="section-title">优店推荐</div>
         <div class="section-content shops">
             <div class="shop-wrap">
@@ -19,15 +18,6 @@
                         <img class="fadeIn" src="https://img.yzcdn.cn/upload_files/2016/08/05/Fv5hhMZrtPZQWE7fape0ddEYtSuy.png?imageView2/2/w/300/h/0/q/75/format/png">
                     </a>
                 </div>
-            </div>
-        </div>
-        <div class="section-content daily">
-            <ul>
-            </ul>
-        </div>
-        <div class="line-block line-block-gray">
-            <div class="lineblock-title">
-                <span class="lineblock-font">最热商品推荐</span>
             </div>
         </div>
     </div>
