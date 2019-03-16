@@ -1017,7 +1017,8 @@ only screen and (min-device-pixel-ratio:1.5) {
 .shop-title {
   font-size: 12px;
   margin-bottom: 10px;
-  position: relative
+  position: relative;
+  display:flex;
 }
 
 .shop-title .badge {
@@ -1076,7 +1077,7 @@ only screen and (min-device-pixel-ratio:1.5) {
 }
 
 .keywords-list {
-  padding-bottom: 20px
+  padding-bottom: 20px;
 }
 
 .keywords-list li {
@@ -1084,7 +1085,8 @@ only screen and (min-device-pixel-ratio:1.5) {
   position: relative;
   margin-right: 8px;
   margin-bottom: 8px;
-  font-size: 12px
+  font-size: 12px;
+  width: 80px;
 }
 
 .keywords-list li:before {

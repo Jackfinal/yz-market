@@ -8,7 +8,7 @@
 
 <script>
     import qs from 'qs'
-    import '../modules/css/search.css'
+    import '../pages/search/search.css'
     export default {
         name: 'foot',
         data() {

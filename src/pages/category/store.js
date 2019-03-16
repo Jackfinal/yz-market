@@ -13,6 +13,7 @@ export default new Vuex.Store({
   mutations: {
       SET_RANK: (state,payload) => {
           state.rankData = payload
+          console.log(payload)
       },
       SET_TOPLIST: (state,payload) => {
           state.topLists = payload
