@@ -30,7 +30,7 @@
                         <li class="goods-item" v-for="list in searchList">
                             <a :href="'goods.html?id='+ list.id ">
                                 <div class="thumb">
-                                    <img :src="list.image">
+                                    <img :src="list.img">
                                     <i class="sell-out" v-if="list.isOut"></i>
                                 </div>
                                 <div class="detail">
@@ -55,6 +55,7 @@
     import mixin from '../../modules/js/mixin.js'
     import * as API from '../../modules/js/api/config.js'
     import qs from 'qs'
+    //解构,通过qs获取
     let {keyword, id} = qs.parse(location.search.substr(1))
 
     export default {
@@ -74,6 +75,7 @@
             getsearchList() {
                 API.GET(`/search/list?id=${id}&keyword=${keyword}&pageNum=&pageSize=`).then(res => {
                     this.searchList = res.lists
+                    console.log(res.lists)
                 })
             },
             move() {
@@ -81,7 +83,17 @@
                 this.show = scrollTop > 100;
             },
             toTop() {
-                //Velocity(document.body, "scroll", { duration: 1000 })
+                let timer = null
+                cancelAnimationFrame(timer);
+                timer = requestAnimationFrame(function fn(){
+                    const oTop = document.body.scrollTop || document.documentElement.scrollTop;
+                    if(oTop > 0){
+                        scrollTo(0,oTop-50);
+                        timer = requestAnimationFrame(fn);
+                    }else{
+                        cancelAnimationFrame(timer);
+                    }
+                });
             }
         },
         mixins: [mixin]
