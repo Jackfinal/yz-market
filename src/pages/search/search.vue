@@ -3,7 +3,7 @@
         <div class="container with-top-search" style="min-height: 667px;" @touchmove="move">
             <div class="custom-search js-search-bar">
                 <form>
-                    <input type="search" class="custom-search-input" autocomplete="off" name="keyword" value="水果" placeholder="搜索更赞的商品" style="padding-left: 66px;">
+                    <input type="search" class="custom-search-input" autocomplete="off" name="keyword" value="" placeholder="搜索更赞的商品" style="padding-left: 66px;">
                     <span class="icon-custom-search"></span>
                 </form>
                 <button class="custom-search-type-selection-btn custom-search-type-selection-btn-focus">商品</button>
@@ -55,7 +55,7 @@
     import mixin from '../../modules/js/mixin.js'
     import * as API from '../../modules/js/api/config.js'
     import qs from 'qs'
-    //解构,通过qs获取
+    //通过qs将url转化为对象,再解构赋值
     let {keyword, id} = qs.parse(location.search.substr(1))
 
     export default {

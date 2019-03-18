@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import '../../../modules/css/goods_custom.css'
+    import '../../goods/style/goods_custom.css'
     import * as API from '../../../modules/js/api/config.js'
 
     export default {
