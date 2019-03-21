@@ -29,7 +29,6 @@
       },
       methods:{
             setSubList(index,id){
-                console.log(index,id)
                 this.$store.commit('SET_TOPINDEX',index)
                 if(index === 0) {
                     this.setRank()

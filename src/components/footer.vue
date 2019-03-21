@@ -28,7 +28,7 @@
                 },{
                     name: '我',
                     icon: 'icon-user',
-                    href: 'member.html'
+                    href: 'user.html'
                 }],
                 curIndex: parseInt(qs.parse(location.search.substr(1)).index) || 0
             }

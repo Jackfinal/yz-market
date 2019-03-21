@@ -9,12 +9,14 @@ const baseURL = 'http://rap2api.taobao.org/app/mock/7058'
 
 //通用方法
 export const POST = (url, params) => {
+    console.log('in_post:',params)
     return axios.post(`${baseURL}${url}`, params,{
         headers: {}
     }).then(res => res.data)
 }
 
 export const GET = (url, params) => {
+    console.log('in_post:',params)
     return axios.get(`${baseURL}${url}`, {
         params: params,
         headers: {}
@@ -22,6 +24,7 @@ export const GET = (url, params) => {
 }
 
 export const DELETE = (url, params) => {
+    console.log('in_post:',params)
     return axios.delete(`${baseURL}${url}`, {
         params: params,
         headers: {}

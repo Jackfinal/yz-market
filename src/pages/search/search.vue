@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div id="app">
         <div class="container with-top-search" style="min-height: 667px;" @touchmove="move">
             <div class="custom-search js-search-bar">

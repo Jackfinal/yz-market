@@ -8,8 +8,10 @@ import './style/goods.css'
 import './style/goods_theme.css'
 import './style/goods_mars.css'
 import './style/goods_sku.css'
-import './style/goods_transition.css'
+import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 
+Vue.use(mandMobile)
 
 Vue.config.productionTip = false;
 
