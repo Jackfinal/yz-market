@@ -3,17 +3,28 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [{
-      path:'/',
-      component: require('../components/member.vue')
-  },{
-      path:'/address',
-      component: require('../components/address.vue')
-  },{
-      path:'/form',
-      component: require('../components/form.vue')
-  }]
-})
+export default new Router(
+    {
+        base: process.env.BASE_URL,
+        routes: [
+            {
+                path: '/',
+                component: () => import('./user.vue')
+            },
+            {
+                path: '/address',
+                component: () => import('./components/address.vue'),
+                children: [{
+                    path: '',
+                    component: () => import('./components/all.vue')
+                }, {
+                    path: 'all',
+                    component: () => import('./components/all.vue')
+                }, {
+                    path: 'form',
+                    component: () => import('./components/form.vue')
+                }]
+            }]
+    })
+
+

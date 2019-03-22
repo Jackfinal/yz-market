@@ -47,7 +47,7 @@
     </div>
 </template>
 <script>
-    import Address from 'js/addressService.js'
+    import * as API from '../../../modules/js/api/config.js'
     import { mapState } from 'vuex'
 
     export default {
@@ -62,7 +62,7 @@
                 id: '',
                 isDefault: false,
                 type: this.$route.query.type,
-                addressData: require('js/address.json'),
+                addressData: require('../../../modules/js/address.json'),
                 cityList: null,
                 districtList: null,
                 instance: this.$route.query.instance,
@@ -112,7 +112,7 @@
                 }
             },
             setDefault() {
-                Address.setDefault(this.id).then(res => {
+                API.POST('/address/setDefault',this.id).then(res => {
                     this.$store.dispatch('setDefaultAction', this.id)
                 })
             }
