@@ -75,7 +75,7 @@
             getsearchList() {
                 API.GET(`/search/list?id=${id}&keyword=${keyword}&pageNum=&pageSize=`).then(res => {
                     this.searchList = res.lists
-                    console.log(res.lists)
+                    //(res.lists)
                 })
             },
             move() {

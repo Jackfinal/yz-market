@@ -35,11 +35,8 @@
                         </a>
                     </div>
                     <div class="block block-list list-vertical">
-                        <router-link class="block-item link clearfix ico-setting js-login" to="/address" target="_self">
-                            <p class="title-info c-black font-size-14">收货地址管理</p>
-                        </router-link>
-                        <a class="block-item link clearfix ico-help" href="javascript:;" target="_blank">
-                            <p class="title-info c-black font-size-14">联系有赞客服</p>
+                        <a class="block-item link clearfix" :class="item.icon" :href="item.href" :target="item.target" v-for="item in blockItem4">
+                            <p class="title-info c-black font-size-14">{{item.message}}</p>
                         </a>
                     </div>
                 </div>
@@ -80,6 +77,10 @@
                     {icon:'ico-coupon',message:'我的优惠券',href:'javascript:;'},
                     {icon:'ico-luckymoney',message:'我的红包',href:'javascript:;'},
                     {icon:'ico-backs',message:'我的返现',href:'javascript:;'},
+                ],
+                blockItem4: [
+                    {icon:'ico-setting',message:'收货地址管理',target:'_self',href:'javascript:;'},
+                    {icon:'ico-help',message:'联系有赞客服',target:'_blank',href:'javascript:;'},
                 ],
                 ucorder:[
                     {data:'topay',href:'javascript:;',message:'代付款'},

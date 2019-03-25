@@ -115,7 +115,7 @@
                     <div class="js-bottom-opts js-footer-auto-ele stick-bottom">
                         <div class="stick-bottom-icons">
                             <a href="javascript:;" class="js-yz-im icons icons-im ">店主</a>
-                            <a href="https://h5.youzan.com/v2/showcase/homepage?kdt_id=16546132" class="js-call-im icons icons-home">店铺</a>
+                            <a href="javascrip:;" class="js-call-im icons icons-home">店铺</a>
                             <a href="javascript:;" class="js-yz-zan icons icons-zan ">收藏</a>
                         </div>
                         <div class="stick-bottom-btns">
@@ -339,8 +339,6 @@
                             image: item
                         })
                     })
-                    console.log(this.details.imgs)
-                    console.log(this.details)
                 })
             },
             changeTabIndex(index) {

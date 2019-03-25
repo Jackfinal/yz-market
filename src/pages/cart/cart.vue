@@ -367,7 +367,7 @@
               good.startX = e.changedTouches[0].clientX
           },
           end(e,shopIndex,good,goodIndex) {
-              console.log(e.target)
+              // console.log(e.target)
               let endX = e.changedTouches[0].clientX
               let left = '0'
               if(good.startX - endX > 100) {

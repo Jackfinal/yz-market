@@ -41,7 +41,7 @@
                     let curLists = res.lists
                     if(curLists.length < this.pageSize){
                         this.allLoaded = true
-                        console.log('加载完成')
+                        //console.log('加载完成')
                     }
                     if(this.lists){
                         this.lists = this.lists.concat(curLists)

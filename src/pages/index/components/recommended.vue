@@ -36,7 +36,7 @@
         },
         mounted(){
             API.GET(`/index/hotLists/pageNum=${this.pageNumber}&pageSize=${this.pageSize}`).then((res)=>{
-                console.log('recommended',res)
+                //console.log('recommended',res)
             })
         }
     }
