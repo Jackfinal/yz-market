@@ -10,7 +10,7 @@ npm run build
 cd dist
 
 # 部署到自定义域域名
-# echo 'https://github.com' > CNAME
+echo 'http://foolishrobot.xyz' > CNAME
 
 git init
 git add -A
@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Orainsink/yz-market.git master:gh-pages
+# git push -f git@github.com:Orainsink/yz-market.git master:gh-pages
 
 cd -
