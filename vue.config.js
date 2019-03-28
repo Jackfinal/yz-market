@@ -8,7 +8,9 @@ module.exports = {
         delete config.entry.app
     },
     lintOnSave: false, //禁用eslint
-    publicPath: './',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/yz-market/'
+        : '/',
     productionSourceMap: false,
     pages,
 }
