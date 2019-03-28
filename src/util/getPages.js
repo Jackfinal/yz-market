@@ -14,7 +14,7 @@ module.exports.pages = function (){
             // 模板来源
             template: `src/pages/${fileName}/${fileName}.html`,
             // 在 dist/index.html 的输出
-            filename: process.env.NODE_ENV === 'development'?`${fileName}.html`:`${fileName}/${fileName}.html`,
+            filename: process.env.NODE_ENV === 'development'?`${fileName}.html`:`${fileName}.html`,
             // 提取出来的通用 chunk 和 vendor chunk。
             //chunks: ['chunk-vendors', 'chunk-common', fileName]
         }
