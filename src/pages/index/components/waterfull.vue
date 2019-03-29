@@ -1,6 +1,6 @@
 <template>
     <div class="hot-goods js-waterfull-wrap">
-        <md-scroll-view ref="scrollView" :scrolling-x="false" @endReached="getLists" class="js-list js-lazy">
+        <md-scroll-view ref="scrollView" :scrolling-x="false" @endReached="getLists" class="js-list js-lazy" auto-reflow>
             <li v-for="list in lists" :key="list.id">
                 <div class="goods-item">
                     <a :href="'goods.html?id='+list.id">
@@ -21,9 +21,13 @@
 
 <script>
     import * as API from '../../../modules/js/api/config.js'
-
+    import {ScrollView, ScrollViewMore} from 'mand-mobile'
     export default {
         name: "waterfull",
+        components: {
+            [ScrollView.name]: ScrollView,
+            [ScrollViewMore.name]: ScrollViewMore,
+        },
         data(){
             return {
                 pageNum: 1,
@@ -59,4 +63,11 @@
     }
 </script>
 
-<style></style>
+<style scoped>
+    .js-list{
+        height: 600px;
+    }
+    .hot-goods{
+        height: 600px;
+    }
+</style>
